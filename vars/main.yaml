@@ -1,2 +1,4 @@
+# Exclusion example:
+#exclude:
+#  - dummypackage
 exclude:
-  - dummypackage

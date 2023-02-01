@@ -5,6 +5,7 @@
     name: "{{ item }}"
     selection: hold
   loop: "{{ exclude }}"
+  when: exclude | length > 0
 
 - name: 'Update packages with APT'
   ansible.builtin.apt:
@@ -17,3 +18,4 @@
     name: "{{ item }}"
     selection: install
   loop: "{{ exclude }}"
+  when: exclude | length > 0
