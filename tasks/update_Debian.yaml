@@ -1,8 +1,19 @@
 ---
 
+- name: Exclude packages from being upgraded
+  ansible.builtin.dpkg_selections:
+    name: "{{ item }}"
+    selection: hold
+  loop: "{{ exclude }}"
+
 - name: 'Update packages with APT'
   ansible.builtin.apt:
     state: 'latest'
     update_cache: true
     name: "*"
-    exclude: "{{ exclude }}"
+
+- name: Reset excluded packages list
+  ansible.builtin.dpkg_selections:
+    name: "{{ item }}"
+    selection: install
+  loop: "{{ exclude }}"
