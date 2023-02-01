@@ -4,8 +4,7 @@
   ansible.builtin.dpkg_selections:
     name: "{{ item }}"
     selection: hold
-  loop: "{{ exclude }}"
-  when: exclude and (exclude | length > 0)
+  loop: "{{ exclude if exclude != None else [] }}"
 
 - name: 'Update packages with APT'
   ansible.builtin.apt:
@@ -17,5 +16,4 @@
   ansible.builtin.dpkg_selections:
     name: "{{ item }}"
     selection: install
-  loop: "{{ exclude }}"
-  when: exclude and (exclude | length > 0)
+  loop: "{{ exclude if exclude != None else [] }}"
