@@ -1,0 +1,13 @@
+################################################################################
+#
+# This role manage packages update / upgrade
+#
+# Version: v1.0
+# Modifications: N/A
+#
+################################################################################
+
+---
+
+- name: Running packages update
+  include_tasks: "update_{{ ansible_distribution_file_variety }}.yaml"

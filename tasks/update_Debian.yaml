@@ -1,0 +1,8 @@
+---
+
+- name: 'Update packages with APT'
+  ansible.builtin.apt:
+    state: 'latest'
+    update_cache: true
+    name: "*"
+    exclude: "{{ exclude }}"

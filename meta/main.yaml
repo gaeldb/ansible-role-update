@@ -1,0 +1,30 @@
+---
+dependencies: []
+
+galaxy_info:
+  role_name: update
+  author: gaeldb
+  description: Ansible generic role to update system
+  company: "Skalab"
+  license: "license (BSD, MIT)"
+  min_ansible_version: 2.9
+  platforms:
+    - name: EL
+      versions:
+        - 7
+        - 8
+        - 9
+    - name: Debian
+      versions:
+        - bullseye
+        - buster
+        - stretch
+  galaxy_tags:
+    - development
+    - system
+    - update
+    - apt
+    - dnf
+    - yum
+    - debian
+    - redhat

@@ -1,0 +1,8 @@
+---
+
+- name: 'Update packages with DNF'
+  ansible.builtin.dnf:
+    state: 'latest'
+    update_cache: true
+    name: "*"
+    exclude: "{{ exclude }}"
